@@ -19,9 +19,9 @@ const rooms = [
   { id: "great",      name: "Great Room",     x: 17, y: 0,  w: 28, h: 36, type: "great" },
   { id: "porch",      name: "Covered Porch",  x: 17, y: 36, w: 28, h: 8,  type: "porch" },
 
-  { id: "bed3",       name: "Bedroom 3",      x: 45, y: 0,  w: 15, h: 13, type: "bedroom" },
-  { id: "bath_right", name: "Shared Bath",    x: 45, y: 13, w: 15, h: 7,  type: "bathroom" },
-  { id: "bed4",       name: "Bedroom 4",      x: 45, y: 20, w: 15, h: 9,  type: "bedroom" },
+  { id: "bed3",       name: "Bedroom 3",      x: 45, y: 0,  w: 15, h: 13, type: "bedroom", alignRight: true  },
+  { id: "bath_right", name: "Shared Bath",    x: 45, y: 13, w: 15, h: 7,  type: "bathroom", alignRight: true },
+  { id: "bed4",       name: "Bedroom 4",      x: 45, y: 20, w: 15, h: 9,  type: "bedroom", alignRight: true  },
   { id: "utility",    name: "Utility Area",   x: 45, y: 29, w: 15, h: 15, type: "utility" }
 ]
 
@@ -50,18 +50,21 @@ function drawRoom(room) {
   const w = room.w * SCALE
   const h = room.h * SCALE
 
+  const anchor = room.alignRight ? 'end' : 'start'
+  const textX = room.alignRight ? x + w - 10 : x + 8
+
   draw.rect(w, h)
     .move(x, y)
     .fill(getFill(room.type))
     .stroke({ width: 3, color: '#222' })
 
   draw.text(room.name)
-    .move(x + 8, y + 8)
-    .font({ size: 12, family: 'Arial' })
+    .move(textX, y + 8)
+    .font({ size: 12, family: 'Arial', anchor })
 
   draw.text(`${room.w}' x ${room.h}'`)
-    .move(x + 8, y + 26)
-    .font({ size: 11, family: 'Arial' })
+    .move(textX, y + 26)
+    .font({ size: 11, family: 'Arial', anchor })
 }
 
 function drawWindowOnHorizontalWall(x1Ft, x2Ft, yFt) {
@@ -197,11 +200,29 @@ drawWindowOnHorizontalWall(36.2, 40.2, 36)
 drawDoorOnVerticalWall(17, 31, 34) // garage to dining
 drawDoorOnVerticalWall(45, 31, 34) // kitchen to utility
 drawDoorOnVerticalWall(17, 5, 8)   // master to great room
-drawDoorOnVerticalWall(17, 16, 19) // left bath
-drawDoorOnVerticalWall(17, 23, 26) // bedroom 2
 drawDoorOnVerticalWall(45, 5, 8)   // bedroom 3
-drawDoorOnVerticalWall(45, 15, 18) // right bath
-drawDoorOnVerticalWall(45, 23, 26) // bedroom 4
+
+// ----- Left shared bath + closet -----
+// Closet inside left bath on living-room side
+draw.line(toPxX(13), toPxY(14), toPxX(13), toPxY(21))
+  .stroke({ width: 2, color: '#555' })
+
+addText('Closet', 14.6, 17.0, 9)
+
+// Doors from bathroom to adjacent bedrooms
+drawDoorOnHorizontalWall(6.5, 10.5, 14)   // to Master Bedroom
+drawDoorOnHorizontalWall(6.5, 10.5, 21)   // to Bedroom 2
+
+// ----- Right shared bath + closet -----
+// Closet inside right bath on exterior-window side opposite the hall
+draw.line(toPxX(49), toPxY(13), toPxX(49), toPxY(20))
+  .stroke({ width: 2, color: '#555' })
+
+addText('Closet', 46.4, 16.0, 9)
+
+// Doors from bathroom to adjacent bedrooms
+drawDoorOnHorizontalWall(49.5, 53.5, 13)  // to Bedroom 3
+drawDoorOnHorizontalWall(49.5, 53.5, 20)  // to Bedroom 4
 
 // Exterior windows
 drawWindowOnHorizontalWall(22, 26, 0)
@@ -218,7 +239,6 @@ drawWindowOnHorizontalWall(49, 53, 0)
 drawWindowOnVerticalWall(60, 5, 8)
 drawWindowOnVerticalWall(60, 15, 17)
 drawWindowOnVerticalWall(60, 23, 26)
-drawWindowOnVerticalWall(60, 32, 34)
 drawWindowOnVerticalWall(60, 39, 41)
 
 // ------------------------
@@ -232,26 +252,23 @@ draw.line(toPxX(51), toPxY(40), toPxX(51), toPxY(44))
 // Laundry (left side upper)
 drawInteriorRect(45, 34, 6, 10, 'Laundry')
 
-// Half Bath (front-right)
-drawInteriorRect(54, 29, 6, 5, 'Half Bath')
+// Half Bath (middle-right)
+drawInteriorRect(54, 34, 6, 5, 'Half Bath')
 
-// Pantry (middle-right, open to hallway)
-draw.line(toPxX(54), toPxY(34), toPxX(60), toPxY(34))
-  .stroke({ width: 2, color: '#555' })
+addText('Pantry', 55.0, 30.6, 10)
 
-draw.line(toPxX(54), toPxY(39), toPxX(60), toPxY(39))
-  .stroke({ width: 2, color: '#555' })
+// Doors
+drawDoorOnVerticalWall(54, 35.5, 38.0)
 
-addText('Pantry', 55.0, 35.6, 10)
+// Windows
+drawWindowOnVerticalWall(60, 35.2, 37.8)
 
 // HVAC / Water Heater (top-right)
 drawInteriorRect(54, 39, 6, 5, 'HVAC / WH', 9)
 
 // Doors
-drawDoorOnVerticalWall(54, 30.5, 33.0)        // half bath door
 drawDoubleDoorOnVerticalWall(51, 37.0, 4.5)   // laundry double doors
 drawDoubleDoorOnVerticalWall(54, 41.5, 4.5)   // HVAC door
 
 // Windows
-drawWindowOnVerticalWall(60, 30.5, 32.5)      // half bath window
 drawWindowOnHorizontalWall(51.2, 54.0, 44)    // back wall window between laundry and HVAC
