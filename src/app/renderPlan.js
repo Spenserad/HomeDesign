@@ -4,6 +4,7 @@ import { renderWindows } from "../renderers/windowsRenderer.js";
 import { renderDoors } from "../renderers/doorsRenderer.js";
 import { addText } from "../drawing/text.js";
 import { renderFixtures } from "../renderers/fixturesRenderer.js";
+import { renderCabinetry } from "../renderers/cabinetryRenderer.js";
 
 export function renderPlan(draw, plan, state) {
   draw.clear();
@@ -32,6 +33,10 @@ export function renderPlan(draw, plan, state) {
 
   if (state.layers.doors) {
     renderDoors(draw, plan.doors ?? []);
+  }
+
+  if (state.layers.cabinetry) {
+    renderCabinetry(draw, plan.cabinetry ?? []);
   }
 
   // placeholder layers
