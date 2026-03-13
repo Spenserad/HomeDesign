@@ -11,7 +11,7 @@ It renders level plans, room metadata, and annotation overlays in a consistent d
 
 - `src/data/floorPlan.js`: canonical room catalog, level definitions, dimensions, and annotation metadata.
 - `src/renderers/`: rendering modules for rooms, walls, openings, fixtures, cabinetry, and annotations.
-- `src/app/createApp.js`: app bootstrap and level/layer state controls.
+- `src/app/createApp.js`: app bootstrap, level/layer controls, and room schedule UI state wiring.
 
 ---
 
@@ -86,11 +86,19 @@ To keep drawings consistent, follow these rules when adding or updating annotati
 
 ## Runtime Controls
 
-Available via `window.app` in the browser console:
+The app now includes an in-page control panel with:
+
+- level switching dropdown
+- per-layer toggles (architectural + MEP + annotations)
+- room schedule table (ID, name, type, area)
+- per-level room count and area summary
+
+The following API still remains available via `window.app` in the browser console:
 
 - `app.setLevel('main' | 'upper')`
-- `app.toggleLayer('annotations')`
+- `app.toggleLayer('<layerName>')`
 - `app.rerender()`
+- `app.getRoomSchedule()`
 
 ---
 
