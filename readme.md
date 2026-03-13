@@ -2,120 +2,98 @@
 
 ## Purpose
 
-The **House Layout Designer** is a lightweight browser-based tool used to design and visualize home floor plans.
-It provides an interactive canvas where rooms, walls, and layout components can be rendered and manipulated for quick architectural prototyping.
-
-The project is intended for **simple layout experimentation and planning**, allowing users to test house configurations before committing them to formal design software.
-
-This project runs entirely in the browser and uses a small JavaScript module structure with a canvas-based rendering approach.
+The **House Layout Designer** is a lightweight browser-based tool used to visualize home floor plans.
+It renders level plans, room metadata, and annotation overlays in a consistent drafting style for quick design iteration.
 
 ---
 
-**index.html**
+## Project Structure
 
-* Defines the application container
-* Loads the main JavaScript module
-* Provides the base canvas area where the layout is rendered
-
-**main.js**
-
-* Contains the logic responsible for rendering the house layout
-* Handles drawing operations and layout structure
-* Serves as the main entry point for the client-side logic
+- `src/data/floorPlan.js`: canonical room catalog, level definitions, dimensions, and annotation metadata.
+- `src/renderers/`: rendering modules for rooms, walls, openings, fixtures, cabinetry, and annotations.
+- `src/app/createApp.js`: app bootstrap and level/layer state controls.
 
 ---
 
-# Requirements
+## Requirements
 
-* **Node.js** (Latest LTS recommended)
-* **npm** (comes with Node.js)
-* **npx live-server** for local development
-
----
-
-# Setup
-
-Clone the repository:
-
-```
-git clone <repo-url>
-cd <repo-folder>
-```
-
-Ensure you are using the latest version of Node and npm:
-
-```
-node -v
-npm -v
-```
+- **Node.js** (Latest LTS recommended)
+- **npm**
+- **npx live-server** for local development
 
 ---
 
-# Install Dependencies
+## Setup
 
-This project does not require a full dependency install.
-For local development we use **live-server** to serve the files.
-
-You can run it directly with **npx**:
-
-```
+```bash
+npm install
 npx live-server
 ```
 
-If you prefer installing it globally:
-
-```
-npm install -g live-server
-```
-
-Then run:
-
-```
-live-server
-```
+The project typically opens at `http://127.0.0.1:8080`.
 
 ---
 
-# Running the Project
+## Floor Plan Data Model
 
-Start the development server:
+### Levels
 
-```
-npx live-server
-```
+`floorPlan.levels` stores each floor independently (`main`, `upper`, etc.) with:
 
-This will:
+- `rooms`: room placement for that level.
+- `dimensions`: measurement definitions with:
+  - `exteriorSpans`
+  - `interiorCritical`
+- `annotations`: orientation metadata (`northArrow`, `scaleNote`, `levelLabel`).
 
-* Start a local development server
-* Automatically open the project in your browser
-* Refresh the browser when files change
+Use `getPlanForLevel(levelId)` to resolve a renderable plan.
 
-The project will typically run at:
+### Stable Room Cross-References
 
-```
-http://127.0.0.1:8080
-```
+A top-level `roomCatalog` is the source of truth for room identity. Every level room references `roomKey`, which resolves to:
 
----
+- stable `roomId` (e.g. `RM-005`)
+- canonical `name`
+- canonical `type`
 
-# Development Notes
-
-* The project uses **vanilla JavaScript modules**
-* Rendering is handled using the **HTML Canvas API**
-* No frontend framework is used
-* The application is designed to remain lightweight and easy to extend
-
-Future enhancements may include:
-
-* Room snapping
-* Wall thickness controls
-* Measurement display
-* Exporting floor plans
-* Grid alignment
-* Drag-and-drop layout editing
+This keeps IDs/names consistent across levels for schedules, references, and downstream tooling.
 
 ---
 
-# License
+## Annotation Conventions
+
+To keep drawings consistent, follow these rules when adding or updating annotations:
+
+1. **Dimension layer only**
+   - Put measurements in `dimensions.exteriorSpans` or `dimensions.interiorCritical`.
+   - Use `axis: 'x'` for horizontal spans and `axis: 'y'` for vertical spans.
+
+2. **Consistent text style**
+   - Dimension and orientation text uses the shared annotation renderer style.
+   - Include units in labels (example: `60' overall`).
+
+3. **Orientation metadata per level**
+   - Every level should include:
+     - `northArrow`
+     - `scaleNote`
+     - `levelLabel`
+
+4. **Keep annotation geometry in plan units (feet)**
+   - Do not store pixel coordinates in data.
+   - Renderer scaling is handled centrally.
+
+---
+
+## Runtime Controls
+
+Available via `window.app` in the browser console:
+
+- `app.setLevel('main' | 'upper')`
+- `app.toggleLayer('annotations')`
+- `app.rerender()`
+
+---
+
+## License
 
 Add your preferred license here (MIT, Apache 2.0, etc).

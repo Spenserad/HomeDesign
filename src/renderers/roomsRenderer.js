@@ -33,5 +33,9 @@ export function renderRooms(draw, rooms) {
     draw.text(`${room.w}' x ${room.h}'`)
       .move(textX, y + 26)
       .font({ size: 11, family: 'Arial', anchor })
+
+    draw.text(room.roomId)
+      .move(textX, y + 42)
+      .font({ size: 9, family: 'Arial', anchor, fill: '#4b5563' })
   }
 }
