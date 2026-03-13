@@ -107,10 +107,36 @@ const mainLevel = {
   fixtures: {
     fireplaces: [{ corner: 'bottom-left', x: 17.0, y: 0, size: 4 }]
   },
-  electrical: [],
-  plumbing: [],
-  gas: [],
-  lighting: [],
+  electrical: {
+    outlets: [
+      { x: 19, y: 2.5 },
+      { x: 42.5, y: 2.5 },
+      { x: 2.5, y: 33.5 },
+      { x: 57.5, y: 33.5 }
+    ],
+    switches: [
+      { x: 18.2, y: 6.5 },
+      { x: 44.2, y: 23 },
+      { x: 44.2, y: 33 }
+    ]
+  },
+  plumbing: [
+    { x1: 6, y1: 16.5, x2: 13, y2: 16.5 },
+    { x1: 51, y1: 36.5, x2: 57, y2: 36.5 },
+    { x1: 57, y1: 36.5, x2: 57, y2: 41.5 }
+  ],
+  gas: [
+    { x1: 17, y1: 2.4, x2: 21.4, y2: 2.4 },
+    { x1: 31.8, y1: 30, x2: 31.8, y2: 28.8 }
+  ],
+  lighting: {
+    ceiling: [
+      { x: 25, y: 11 },
+      { x: 31, y: 29 },
+      { x: 7.5, y: 24 },
+      { x: 52, y: 23 }
+    ]
+  },
   cabinetry: [
     { type: 'base-run', x: 29, y: 28.8, w: 9, h: 2 },
     { type: 'base-run', x: 38, y: 21.0, w: 2, h: 7.8 },
@@ -160,10 +186,10 @@ const upperLevel = {
   windows: [],
   doors: [],
   fixtures: {},
-  electrical: [],
+  electrical: { outlets: [], switches: [] },
   plumbing: [],
   gas: [],
-  lighting: [],
+  lighting: { ceiling: [] },
   cabinetry: []
 }
 
