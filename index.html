@@ -9,6 +9,15 @@
       padding: 20px;
     }
 
+    .controls {
+      margin-bottom: 12px;
+    }
+
+    #level-selector {
+      margin-left: 8px;
+      padding: 4px 8px;
+    }
+
     #canvas {
       width: 900px;
       height: 600px;
@@ -19,6 +28,11 @@
 <body>
 
 <h2>Floor Plan</h2>
+
+<div class="controls">
+  <label for="level-selector">Level:</label>
+  <select id="level-selector" aria-label="Select floor level"></select>
+</div>
 
 <div id="canvas"></div>
 
