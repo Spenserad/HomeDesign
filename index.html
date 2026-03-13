@@ -14,11 +14,64 @@
       height: 600px;
       border: 1px solid #ccc;
     }
+
+    .layer-controls {
+      width: 900px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      background: #f8f8f8;
+    }
+
+    .layer-controls h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .layer-group {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    .layer-group:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .layer-group-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .layer-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .layer-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
 <h2>Floor Plan</h2>
+
+<section id="layer-controls" class="layer-controls" aria-label="Layer controls">
+  <h3>Layers</h3>
+</section>
 
 <div id="canvas"></div>
 
