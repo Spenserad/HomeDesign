@@ -5,6 +5,7 @@ export const defaultLayers = {
   labels: true,
   windows: true,
   doors: true,
+  annotations: true,
   electrical: false,
   plumbing: false,
   gas: false,

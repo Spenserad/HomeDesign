@@ -1,24 +1,33 @@
+import { floorPlan, getPlanForLevel } from '../data/floorPlan.js'
 import { createDrawing } from '../drawing/canvas.js'
-import { floorPlan } from '../data/floorPlan.js'
-import { createState } from './state.js'
 import { renderPlan } from './renderPlan.js'
+import { createState } from './state.js'
 
 export function createApp() {
   const draw = createDrawing('#canvas')
-  const state = createState()
+  const state = createState(floorPlan.defaultLevelId)
 
-  renderPlan(draw, floorPlan, state)
+  const renderCurrentPlan = () => {
+    const levelPlan = getPlanForLevel(state.currentLevelId)
+    renderPlan(draw, levelPlan, state)
+  }
+
+  renderCurrentPlan()
 
   window.app = {
     draw,
     state,
     floorPlan,
     rerender() {
-      renderPlan(draw, floorPlan, state)
+      renderCurrentPlan()
+    },
+    setLevel(levelId) {
+      state.currentLevelId = levelId
+      renderCurrentPlan()
     },
     toggleLayer(name) {
       state.layers[name] = !state.layers[name]
-      renderPlan(draw, floorPlan, state)
+      renderCurrentPlan()
     }
   }
 }
