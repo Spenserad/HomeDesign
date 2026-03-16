@@ -9,7 +9,9 @@ const roomCatalog = {
   bath_right: { id: 'RM-008', name: 'Shared Bath', type: 'bathroom' },
   bed4: { id: 'RM-009', name: 'Bedroom 4', type: 'bedroom' },
   utility: { id: 'RM-010', name: 'Utility Area', type: 'utility' },
-  loft: { id: 'RM-011', name: 'Loft', type: 'great' }
+  loft: { id: 'RM-011', name: 'Open to Below', type: 'great' },
+  bonus: { id: 'RM-012', name: 'Bonus Room / Office', type: 'utility' },
+  hall_upper: { id: 'RM-013', name: 'Hallway', type: 'utility' }
 }
 
 const mainLevel = {
@@ -152,21 +154,25 @@ const upperLevel = {
   id: 'upper',
   label: 'Level 2 - Upper Floor',
   rooms: [
-    { roomKey: 'master', x: 0, y: 0, w: 17, h: 13 },
-    { roomKey: 'bath_left', x: 0, y: 13, w: 17, h: 7 },
-    { roomKey: 'loft', x: 17, y: 0, w: 28, h: 20 },
-    { roomKey: 'bed3', x: 45, y: 0, w: 15, h: 11, alignRight: true },
-    { roomKey: 'bath_right', x: 45, y: 11, w: 15, h: 7, alignRight: true },
-    { roomKey: 'bed4', x: 45, y: 18, w: 15, h: 11, alignRight: true }
+    { roomKey: 'loft', x: 0, y: 0, w: 41, h: 44 },
+    { roomKey: 'hall_upper', x: 41, y: 9, w: 4, h: 28 },
+    { roomKey: 'bed4', x: 45, y: 9, w: 15, h: 13, alignRight: true },
+    { roomKey: 'bath_left', x: 45, y: 22, w: 15, h: 7, alignRight: true },
+    { roomKey: 'bed2', x: 45, y: 29, w: 15, h: 8, alignRight: true },
+    { roomKey: 'bonus', x: 45, y: 37, w: 15, h: 7, alignRight: true }
   ],
-  labels: [{ text: 'Open to Below', x: 26, y: 28, size: 11 }],
+  labels: [
+    { text: 'Balcony / Open to Great Room', x: 13, y: 39.2, size: 10 },
+    { text: 'Stairs Up', x: 52.5, y: 2.6, size: 10 }
+  ],
   dimensions: {
     exteriorSpans: [
       { id: 'upper-width', axis: 'x', from: 0, to: 60, at: -3, label: "60' overall" },
-      { id: 'upper-depth', axis: 'y', from: 0, to: 29, at: 63, label: "29' conditioned depth" }
+      { id: 'upper-depth', axis: 'y', from: 0, to: 44, at: 63, label: "44' full upper outline" }
     ],
     interiorCritical: [
-      { id: 'upper-loft-width', axis: 'x', from: 17, to: 45, at: 22, label: "28' Loft width" }
+      { id: 'upper-open-width', axis: 'x', from: 0, to: 41, at: 41, label: "41' open-to-below span" },
+      { id: 'upper-bedroom-stack', axis: 'y', from: 9, to: 37, at: 62, label: "28' bedroom + bath stack" }
     ]
   },
   annotations: {
@@ -178,10 +184,14 @@ const upperLevel = {
     outerBorder: true,
     dashed: [],
     interiorLines: [
-      { x1: 17, y1: 20, x2: 45, y2: 20 },
-      { x1: 49, y1: 11, x2: 49, y2: 18 }
+      { x1: 45, y1: 9, x2: 60, y2: 9 },
+      { x1: 52, y1: 0, x2: 52, y2: 9 },
+      { x1: 45, y1: 5, x2: 52, y2: 5 }
     ],
-    interiorRects: []
+    interiorRects: [
+      { x: 53, y: 1, w: 6.5, h: 4, label: 'Stair', labelSize: 9 },
+      { x: 54.5, y: 5, w: 4.5, h: 3.6, label: 'Landing', labelSize: 8 }
+    ]
   },
   windows: [],
   doors: [],
