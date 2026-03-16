@@ -18,9 +18,6 @@ const mainLevel = {
   id: 'main',
   label: 'Level 1 - Main Floor',
   rooms: [
-    { roomKey: 'master', x: 0, y: 0, w: 17, h: 13 },
-    { roomKey: 'bath_left', x: 0, y: 13, w: 17, h: 7 },
-    { roomKey: 'bed2', x: 0, y: 20, w: 17, h: 10 },
     { roomKey: 'garage', x: 0, y: 30, w: 17, h: 14 },
     { roomKey: 'great', x: 17, y: 0, w: 28, h: 36 },
     { roomKey: 'porch', x: 17, y: 36, w: 28, h: 8 },
@@ -36,7 +33,6 @@ const mainLevel = {
     { text: 'Gas Fireplace', x: 21.8, y: 2.6, size: 10 },
     { text: 'BACK', x: 28, y: 46.4, size: 12 },
     { text: 'FRONT', x: 28, y: -2.0, size: 12 },
-    { text: 'Closet', x: 14.6, y: 16.0, size: 9 },
     { text: 'Closet', x: 46.4, y: 14.5, size: 9 },
     { text: 'Pantry', x: 55.0, y: 30.6, size: 10 }
   ],
@@ -46,8 +42,7 @@ const mainLevel = {
       { id: 'main-depth', axis: 'y', from: 0, to: 44, at: 63, label: "44' overall" }
     ],
     interiorCritical: [
-      { id: 'main-core-width', axis: 'x', from: 17, to: 45, at: 38, label: "28' Great / Kitchen core" },
-      { id: 'main-room-stack', axis: 'y', from: 0, to: 30, at: -1.5, label: "30' bedroom stack" }
+      { id: 'main-core-width', axis: 'x', from: 17, to: 45, at: 38, label: "28' Great / Kitchen core" }
     ]
   },
   annotations: {
@@ -59,7 +54,6 @@ const mainLevel = {
     outerBorder: true,
     dashed: [{ x1: 17, x2: 45, y: 20 }],
     interiorLines: [
-      { x1: 13, y1: 13, x2: 13, y2: 20 },
       { x1: 49, y1: 11, x2: 49, y2: 18 },
       { x1: 51, y1: 40, x2: 51, y2: 44 }
     ],
@@ -74,10 +68,6 @@ const mainLevel = {
     { wall: 'h', x1: 22, x2: 26, y: 0 },
     { wall: 'h', x1: 36, x2: 40, y: 0 },
     { wall: 'h', x1: 49, x2: 53, y: 0 },
-    { wall: 'v', x: 0, y1: 3, y2: 6 },
-    { wall: 'v', x: 0, y1: 8, y2: 11 },
-    { wall: 'v', x: 0, y1: 15, y2: 17 },
-    { wall: 'v', x: 0, y1: 24, y2: 27 },
     { wall: 'v', x: 0, y1: 31.5, y2: 34 },
     { wall: 'v', x: 0, y1: 39, y2: 42 },
     { wall: 'v', x: 60, y1: 5, y2: 8 },
@@ -93,14 +83,10 @@ const mainLevel = {
     { wall: 'h', kind: 'sliding', x1: 22, x2: 28, y: 36 },
     { wall: 'v', kind: 'single', x: 17, y1: 31, y2: 34 },
     { wall: 'v', kind: 'single', x: 45, y1: 31, y2: 34 },
-    { wall: 'v', kind: 'single', x: 17, y1: 5, y2: 8 },
     { wall: 'v', kind: 'single', x: 45, y1: 5, y2: 8 },
     { wall: 'v', kind: 'single', x: 45, y1: 22, y2: 24 },
-    { wall: 'h', kind: 'single', x1: 6.5, x2: 10.5, y: 13 },
-    { wall: 'h', kind: 'single', x1: 6.5, x2: 10.5, y: 20 },
     { wall: 'h', kind: 'single', x1: 49.5, x2: 53.5, y: 11 },
     { wall: 'h', kind: 'single', x1: 49.5, x2: 53.5, y: 18 },
-    { wall: 'v', kind: 'single', x: 13, y1: 15.2, y2: 17.6 },
     { wall: 'v', kind: 'single', x: 49, y1: 12.8, y2: 15.2 },
     { wall: 'v', kind: 'single', x: 54, y1: 35.5, y2: 38.0 },
     { wall: 'v', kind: 'double', x: 51, centerY: 37.0, width: 4.5 },
@@ -123,7 +109,6 @@ const mainLevel = {
     ]
   },
   plumbing: [
-    { x1: 6, y1: 16.5, x2: 13, y2: 16.5 },
     { x1: 51, y1: 36.5, x2: 57, y2: 36.5 },
     { x1: 57, y1: 36.5, x2: 57, y2: 41.5 }
   ],
@@ -135,7 +120,6 @@ const mainLevel = {
     ceiling: [
       { x: 25, y: 11 },
       { x: 31, y: 29 },
-      { x: 7.5, y: 24 },
       { x: 52, y: 23 }
     ]
   },
