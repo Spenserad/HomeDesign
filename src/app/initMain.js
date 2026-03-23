@@ -29,6 +29,10 @@ function initTabs() {
   })
 }
 
-createApp()
-createSchedulePage('#embedded-schedule-app')
-initTabs()
+async function init() {
+  await createApp()
+  await createSchedulePage('#embedded-schedule-app')
+  initTabs()
+}
+
+init()

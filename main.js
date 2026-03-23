@@ -1,9 +1,13 @@
 import { createApp } from './src/app/createApp.js'
 import { createSchedulePage } from './src/app/createSchedulePage.js'
 
-createApp()
+async function init() {
+  await createApp()
 
-const scheduleRoot = document.getElementById('schedule-root')
-if (scheduleRoot) {
-  createSchedulePage('#schedule-root')
+  const scheduleRoot = document.getElementById('schedule-root')
+  if (scheduleRoot) {
+    await createSchedulePage('#schedule-root')
+  }
 }
+
+init()

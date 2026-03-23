@@ -1,11 +1,8 @@
 import {
-  buildSchedule,
+  getBuildSchedule,
   getSchedulePhaseMap,
-  schedulePhases,
+  getSchedulePhases,
 } from "../data/buildSchedule.js";
-
-const phaseMap = getSchedulePhaseMap();
-const allTaskIds = new Set(buildSchedule.map((task) => task.id));
 
 function escapeHtml(value) {
   return String(value)
@@ -214,9 +211,16 @@ function ganttSection(state) {
   `;
 }
 
-export function createSchedulePage(target = "#schedule-app") {
+export async function createSchedulePage(target = "#schedule-app") {
   const root = document.querySelector(target);
   if (!root) throw new Error(`Schedule root not found for selector: ${target}`);
+
+  const [schedulePhases, buildSchedule, phaseMap] = await Promise.all([
+    getSchedulePhases(),
+    getBuildSchedule(),
+    getSchedulePhaseMap(),
+  ]);
+  const allTaskIds = new Set(buildSchedule.map((task) => task.id));
 
   const state = {
     query: "",

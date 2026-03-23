@@ -1,0 +1,1727 @@
+{
+  "schedulePhases": [
+    {
+      "id": "permits-planning",
+      "label": "Permits + Planning",
+      "color": "#5b7cfa"
+    },
+    {
+      "id": "site-slab",
+      "label": "Site + Slab",
+      "color": "#2f9e44"
+    },
+    {
+      "id": "framing-dryin",
+      "label": "Framing + Dry-In",
+      "color": "#f08c00"
+    },
+    {
+      "id": "roughins-insulation",
+      "label": "Rough-Ins + Insulation",
+      "color": "#7048e8"
+    },
+    {
+      "id": "finishes",
+      "label": "Interior + Exterior Finishes",
+      "color": "#c2255c"
+    },
+    {
+      "id": "final-movein",
+      "label": "Final Inspections + Move-In",
+      "color": "#0b7285"
+    }
+  ],
+  "buildSchedule": [
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-01",
+      "name": "Define target build assumptions and budget guardrails",
+      "subcontractor": "Owner",
+      "duration": 2,
+      "dependsOn": [],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": "Lock high-level scope, contingency, and preferred finish level."
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-02",
+      "name": "Screen land listings for flood zone, access, and utility availability",
+      "subcontractor": "Owner",
+      "duration": 3,
+      "dependsOn": [
+        "PP-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-03",
+      "name": "Purchase land under due-diligence period",
+      "subcontractor": "Owner / Title",
+      "duration": 5,
+      "dependsOn": [
+        "PP-02"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-04",
+      "name": "Order boundary and topographic survey",
+      "subcontractor": "Surveyor",
+      "duration": 5,
+      "dependsOn": [
+        "PP-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-05",
+      "name": "Perform soils and perc testing",
+      "subcontractor": "Geotech / Soil Tester",
+      "duration": 5,
+      "dependsOn": [
+        "PP-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": "Confirm standard leach field viability."
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-06",
+      "name": "Confirm standard septic suitability and reserve drainfield area",
+      "subcontractor": "Septic Designer",
+      "duration": 2,
+      "dependsOn": [
+        "PP-05"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-07",
+      "name": "Interview architect / residential designer",
+      "subcontractor": "Owner",
+      "duration": 4,
+      "dependsOn": [
+        "PP-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-08",
+      "name": "Select designer and execute agreement",
+      "subcontractor": "Owner",
+      "duration": 2,
+      "dependsOn": [
+        "PP-07"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-09",
+      "name": "Develop schematic floor plan and exterior concept",
+      "subcontractor": "Designer",
+      "duration": 10,
+      "dependsOn": [
+        "PP-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-10",
+      "name": "Coordinate owner review of room layout, built-ins, and utility room",
+      "subcontractor": "Owner",
+      "duration": 3,
+      "dependsOn": [
+        "PP-09"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-11",
+      "name": "Select structural system: CMU first floor / wood second floor",
+      "subcontractor": "Owner / Engineer",
+      "duration": 1,
+      "dependsOn": [
+        "PP-10"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-12",
+      "name": "Select envelope assumptions: brick veneer, impact windows, metal roof",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "PP-10"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-13",
+      "name": "Select mechanical assumptions: zoned HVAC, dehumidifier, HPWH",
+      "subcontractor": "Owner / HVAC Designer",
+      "duration": 2,
+      "dependsOn": [
+        "PP-10"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-14",
+      "name": "Prepare site plan with house, septic, well, driveway, setbacks",
+      "subcontractor": "Designer / Civil",
+      "duration": 7,
+      "dependsOn": [
+        "PP-04",
+        "PP-06",
+        "PP-09"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-15",
+      "name": "Structural engineering and wind design",
+      "subcontractor": "Structural Engineer",
+      "duration": 10,
+      "dependsOn": [
+        "PP-11",
+        "PP-14"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-16",
+      "name": "Energy calculations and compliance package",
+      "subcontractor": "Energy Rater",
+      "duration": 4,
+      "dependsOn": [
+        "PP-13",
+        "PP-14"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-17",
+      "name": "Well permit application package",
+      "subcontractor": "Owner / Well Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "PP-14"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-18",
+      "name": "Septic permit application package",
+      "subcontractor": "Owner / Septic Designer",
+      "duration": 2,
+      "dependsOn": [
+        "PP-14"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-19",
+      "name": "Building permit application package",
+      "subcontractor": "Owner / Designer",
+      "duration": 3,
+      "dependsOn": [
+        "PP-15",
+        "PP-16",
+        "PP-17",
+        "PP-18"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-20",
+      "name": "Submit permit applications and pay initial fees",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "PP-19"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-21",
+      "name": "Respond to permit review comments / revisions",
+      "subcontractor": "Owner / Design Team",
+      "duration": 10,
+      "dependsOn": [
+        "PP-20"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-22",
+      "name": "Receive building / septic / well permit approvals",
+      "subcontractor": "County / Agencies",
+      "duration": 1,
+      "dependsOn": [
+        "PP-21"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": "Hard gate before mobilization."
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-23",
+      "name": "Record Notice of Commencement",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "PP-22"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-24",
+      "name": "Create subcontractor bid list and scope sheets",
+      "subcontractor": "Owner",
+      "duration": 4,
+      "dependsOn": [
+        "PP-15",
+        "PP-16"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-25",
+      "name": "Award site, slab, framing, roofing, MEP, insulation, drywall, finishes trades",
+      "subcontractor": "Owner",
+      "duration": 7,
+      "dependsOn": [
+        "PP-24",
+        "PP-22"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "permits-planning",
+      "id": "PP-26",
+      "name": "Hold pre-construction coordination meeting",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "PP-23",
+        "PP-25"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-01",
+      "name": "Mobilize site contractor and establish construction entrance",
+      "subcontractor": "Site Contractor",
+      "duration": 1,
+      "dependsOn": [
+        "PP-26"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-02",
+      "name": "Install temporary power pole and service",
+      "subcontractor": "Electrician",
+      "duration": 2,
+      "dependsOn": [
+        "SS-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-03",
+      "name": "Clear trees and vegetation",
+      "subcontractor": "Site Contractor",
+      "duration": 4,
+      "dependsOn": [
+        "SS-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-04",
+      "name": "Strip topsoil and rough grade house pad",
+      "subcontractor": "Site Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "SS-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-05",
+      "name": "Stake building corners and benchmark elevations",
+      "subcontractor": "Surveyor",
+      "duration": 1,
+      "dependsOn": [
+        "SS-04"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-06",
+      "name": "Owner verification of house placement and utility routes",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "SS-05"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-07",
+      "name": "Drill well and cap for future tie-in",
+      "subcontractor": "Well Contractor",
+      "duration": 3,
+      "dependsOn": [
+        "SS-05"
+      ],
+      "inspection": "Well inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-08",
+      "name": "Excavate footing and slab area",
+      "subcontractor": "Slab Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "SS-06"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-09",
+      "name": "Compact subgrade and import fill as needed",
+      "subcontractor": "Slab Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "SS-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-10",
+      "name": "Set forms and thickened footer layout",
+      "subcontractor": "Slab Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "SS-09"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-11",
+      "name": "Install underslab plumbing and sleeves",
+      "subcontractor": "Plumber",
+      "duration": 2,
+      "dependsOn": [
+        "SS-10"
+      ],
+      "inspection": "Underground plumbing inspection",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-12",
+      "name": "Install underslab electrical / other conduits as needed",
+      "subcontractor": "Electrician",
+      "duration": 1,
+      "dependsOn": [
+        "SS-10"
+      ],
+      "inspection": "Underground electrical inspection",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": "Keep limited to necessary sleeves and service runs."
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-13",
+      "name": "Install termite treatment and protection system",
+      "subcontractor": "Pest Control",
+      "duration": 1,
+      "dependsOn": [
+        "SS-11",
+        "SS-12"
+      ],
+      "inspection": "Termite / treatment verification",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-14",
+      "name": "Place vapor barrier, reinforcement, and thickened edge steel",
+      "subcontractor": "Slab Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "SS-13"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-15",
+      "name": "Owner pre-pour walk and photo documentation",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "SS-14"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-16",
+      "name": "Footer / slab pre-pour inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "SS-15"
+      ],
+      "inspection": "Footer / slab pre-pour inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-17",
+      "name": "Pour and finish monolithic slab",
+      "subcontractor": "Slab Contractor",
+      "duration": 1,
+      "dependsOn": [
+        "SS-16"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-18",
+      "name": "Initial slab cure and protection period",
+      "subcontractor": "Slab Contractor",
+      "duration": 5,
+      "dependsOn": [
+        "SS-17"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "site-slab",
+      "id": "SS-19",
+      "name": "Owner verify anchor locations, penetrations, and slab condition",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "SS-18"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-01",
+      "name": "Lay first-course CMU and establish block elevations",
+      "subcontractor": "Mason",
+      "duration": 2,
+      "dependsOn": [
+        "SS-19"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-02",
+      "name": "Build first-floor CMU walls and reinforce cells",
+      "subcontractor": "Mason",
+      "duration": 6,
+      "dependsOn": [
+        "FD-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-03",
+      "name": "Install lintels / bond beams / embedded anchors",
+      "subcontractor": "Mason",
+      "duration": 2,
+      "dependsOn": [
+        "FD-02"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-04",
+      "name": "Frame second floor deck system",
+      "subcontractor": "Framer",
+      "duration": 4,
+      "dependsOn": [
+        "FD-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-05",
+      "name": "Frame second-floor walls",
+      "subcontractor": "Framer",
+      "duration": 5,
+      "dependsOn": [
+        "FD-04"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-06",
+      "name": "Frame roof structure and cathedral ceiling areas",
+      "subcontractor": "Framer",
+      "duration": 4,
+      "dependsOn": [
+        "FD-05"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-07",
+      "name": "Install roof sheathing",
+      "subcontractor": "Framer",
+      "duration": 2,
+      "dependsOn": [
+        "FD-06"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-08",
+      "name": "Install wall sheathing, bracing, and blocking for built-ins",
+      "subcontractor": "Framer",
+      "duration": 3,
+      "dependsOn": [
+        "FD-05"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": "Include built-in drawer walls, shelving zones, bath niches, TV backing, handrails."
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-09",
+      "name": "Frame mechanical room louvers / ventilation strategy",
+      "subcontractor": "Framer",
+      "duration": 1,
+      "dependsOn": [
+        "FD-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-10",
+      "name": "Owner framing walk for built-in blocking, room dimensions, and rough openings",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "FD-08",
+        "FD-09"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-11",
+      "name": "Framing / structural inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FD-10"
+      ],
+      "inspection": "Framing inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-12",
+      "name": "Install peel-and-stick roof underlayment",
+      "subcontractor": "Roofer",
+      "duration": 2,
+      "dependsOn": [
+        "FD-07"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-13",
+      "name": "Install impact-rated windows and exterior doors",
+      "subcontractor": "Window / Door Installer",
+      "duration": 4,
+      "dependsOn": [
+        "FD-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-14",
+      "name": "Install WRB / flashing / drainage details",
+      "subcontractor": "Envelope Crew",
+      "duration": 3,
+      "dependsOn": [
+        "FD-13"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-15",
+      "name": "Roof dry-in inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FD-12"
+      ],
+      "inspection": "Roof dry-in inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-16",
+      "name": "Install standing seam metal roof",
+      "subcontractor": "Roofer",
+      "duration": 4,
+      "dependsOn": [
+        "FD-15"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "framing-dryin",
+      "id": "FD-17",
+      "name": "Exterior dry-in complete milestone",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "FD-14",
+        "FD-16"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-01",
+      "name": "Layout interior plumbing wall penetrations and fixture centers",
+      "subcontractor": "Plumber",
+      "duration": 1,
+      "dependsOn": [
+        "FD-17"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-02",
+      "name": "Install rough plumbing for baths, kitchen, laundry, utility room",
+      "subcontractor": "Plumber",
+      "duration": 4,
+      "dependsOn": [
+        "RI-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-03",
+      "name": "Install propane line for fireplace",
+      "subcontractor": "Gas Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FD-17"
+      ],
+      "inspection": "Fuel gas rough inspection",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-04",
+      "name": "Install electrical rough-in, panel, homeruns, and dedicated circuits",
+      "subcontractor": "Electrician",
+      "duration": 5,
+      "dependsOn": [
+        "FD-17"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-05",
+      "name": "Install low-voltage rough-in and network drops",
+      "subcontractor": "Low Voltage Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FD-17"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-06",
+      "name": "Install HVAC rough ducts, returns, line sets, dehumidifier rough, bath exhaust",
+      "subcontractor": "HVAC Contractor",
+      "duration": 5,
+      "dependsOn": [
+        "FD-17"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-07",
+      "name": "Rough-in mechanical room condensate and HPWH clearances",
+      "subcontractor": "Plumber / HVAC",
+      "duration": 1,
+      "dependsOn": [
+        "RI-02",
+        "RI-06"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-08",
+      "name": "Owner rough-in walk with photo documentation",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "RI-02",
+        "RI-03",
+        "RI-04",
+        "RI-05",
+        "RI-06",
+        "RI-07"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": "Capture every wall before insulation and drywall."
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-09",
+      "name": "Complete rough plumbing inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "RI-08"
+      ],
+      "inspection": "Rough plumbing inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-10",
+      "name": "Complete rough electrical inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "RI-08"
+      ],
+      "inspection": "Rough electrical inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-11",
+      "name": "Complete rough mechanical inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "RI-08"
+      ],
+      "inspection": "Rough mechanical inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-12",
+      "name": "Complete fuel gas rough inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "RI-08"
+      ],
+      "inspection": "Fuel gas rough inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-13",
+      "name": "Air seal top plates, penetrations, and transition joints",
+      "subcontractor": "Insulation Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "RI-09",
+        "RI-10",
+        "RI-11",
+        "RI-12"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-14",
+      "name": "Install spray foam in cathedral ceiling roof deck areas",
+      "subcontractor": "Insulation Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "RI-13"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-15",
+      "name": "Install vent baffles and attic ventilation details in vented attic zones",
+      "subcontractor": "Insulation Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "RI-13"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-16",
+      "name": "Install Rockwool batts in walls and selected sound-control areas",
+      "subcontractor": "Insulation Contractor",
+      "duration": 3,
+      "dependsOn": [
+        "RI-13"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-17",
+      "name": "Install batt insulation at attic floor / ceiling plane in vented attic areas",
+      "subcontractor": "Insulation Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "RI-15"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "roughins-insulation",
+      "id": "RI-18",
+      "name": "Insulation inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "RI-14",
+        "RI-16",
+        "RI-17"
+      ],
+      "inspection": "Insulation inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-01",
+      "name": "Hang drywall at walls and flat ceilings",
+      "subcontractor": "Drywall Contractor",
+      "duration": 4,
+      "dependsOn": [
+        "RI-18"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-02",
+      "name": "Hang drywall at cathedral ceilings",
+      "subcontractor": "Drywall Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "RI-18"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-03",
+      "name": "Tape and first coat",
+      "subcontractor": "Drywall Contractor",
+      "duration": 3,
+      "dependsOn": [
+        "FE-01",
+        "FE-02"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-04",
+      "name": "Second / third coats and detail finish",
+      "subcontractor": "Drywall Contractor",
+      "duration": 4,
+      "dependsOn": [
+        "FE-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-05",
+      "name": "Sand and prep Level 4/5 finish in main areas and utility room",
+      "subcontractor": "Drywall Contractor",
+      "duration": 3,
+      "dependsOn": [
+        "FE-04"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-06",
+      "name": "Owner lighting-check walk for drywall quality",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "FE-05"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-07",
+      "name": "Prime drywall and seal surfaces",
+      "subcontractor": "Painter",
+      "duration": 2,
+      "dependsOn": [
+        "FE-06"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-08",
+      "name": "Install interior doors, jambs, and base trim",
+      "subcontractor": "Finish Carpenter",
+      "duration": 4,
+      "dependsOn": [
+        "FE-07"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-09",
+      "name": "Install custom built-ins and bedroom drawer systems",
+      "subcontractor": "Finish Carpenter",
+      "duration": 7,
+      "dependsOn": [
+        "FE-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": "Heavy built-in scope."
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-10",
+      "name": "Install cabinets and vanities",
+      "subcontractor": "Cabinet Installer",
+      "duration": 4,
+      "dependsOn": [
+        "FE-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-11",
+      "name": "Template and prep tile substrate",
+      "subcontractor": "Tile Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FE-10"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-12",
+      "name": "Install whole-house tile flooring",
+      "subcontractor": "Tile Contractor",
+      "duration": 7,
+      "dependsOn": [
+        "FE-11"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-13",
+      "name": "Install shower / bath wall tile and niche details",
+      "subcontractor": "Tile Contractor",
+      "duration": 5,
+      "dependsOn": [
+        "FE-10"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-14",
+      "name": "Grout, seal, and protect tile",
+      "subcontractor": "Tile Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FE-12",
+        "FE-13"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-15",
+      "name": "Install brick veneer and drainage details",
+      "subcontractor": "Mason",
+      "duration": 7,
+      "dependsOn": [
+        "FD-14",
+        "FD-16"
+      ],
+      "inspection": "Masonry / veneer inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-16",
+      "name": "Install exterior trim, soffit, and fascia details",
+      "subcontractor": "Exterior Trim Crew",
+      "duration": 3,
+      "dependsOn": [
+        "FE-15"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-17",
+      "name": "Install garage doors and exterior hardware",
+      "subcontractor": "Door Installer",
+      "duration": 1,
+      "dependsOn": [
+        "FE-16"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-18",
+      "name": "Final interior paint",
+      "subcontractor": "Painter",
+      "duration": 4,
+      "dependsOn": [
+        "FE-09",
+        "FE-10",
+        "FE-14"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "finishes",
+      "id": "FE-19",
+      "name": "Owner finish walk and punch list round 1",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "FE-18",
+        "FE-17"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-01",
+      "name": "Set plumbing fixtures, faucets, toilets, tubs, and trim",
+      "subcontractor": "Plumber",
+      "duration": 3,
+      "dependsOn": [
+        "FE-19"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-02",
+      "name": "Set electrical devices, fixtures, panel trims, smoke detectors",
+      "subcontractor": "Electrician",
+      "duration": 3,
+      "dependsOn": [
+        "FE-19"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-03",
+      "name": "Set HVAC equipment, controls, zoning, and dehumidifier",
+      "subcontractor": "HVAC Contractor",
+      "duration": 3,
+      "dependsOn": [
+        "FE-19"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-04",
+      "name": "Install heat pump water heater with louvered utility room strategy",
+      "subcontractor": "Plumber",
+      "duration": 1,
+      "dependsOn": [
+        "FM-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-05",
+      "name": "Startup HVAC, balance zones, and commission dehumidifier",
+      "subcontractor": "HVAC Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FM-03"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-06",
+      "name": "Complete well tie-in, pressure tank, filtration rough set",
+      "subcontractor": "Well Contractor / Plumber",
+      "duration": 2,
+      "dependsOn": [
+        "FM-01"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-07",
+      "name": "Install standard septic tank and drainfield",
+      "subcontractor": "Septic Contractor",
+      "duration": 3,
+      "dependsOn": [
+        "SS-19",
+        "FE-15"
+      ],
+      "inspection": "Septic final inspection",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-08",
+      "name": "Final grading, swales, and site drainage",
+      "subcontractor": "Site Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FM-07"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-09",
+      "name": "Install driveway / apron",
+      "subcontractor": "Concrete Contractor",
+      "duration": 2,
+      "dependsOn": [
+        "FM-08"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-10",
+      "name": "Owner final documentation sweep and warranty binder setup",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "FM-04",
+        "FM-05",
+        "FM-06",
+        "FM-09"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-11",
+      "name": "Blower door / final energy verification",
+      "subcontractor": "Energy Rater",
+      "duration": 1,
+      "dependsOn": [
+        "FM-10"
+      ],
+      "inspection": "Blower door / energy verification",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-12",
+      "name": "Final plumbing inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FM-04",
+        "FM-06"
+      ],
+      "inspection": "Final plumbing inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-13",
+      "name": "Final electrical inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FM-02"
+      ],
+      "inspection": "Final electrical inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-14",
+      "name": "Final mechanical inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FM-05"
+      ],
+      "inspection": "Final mechanical inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-15",
+      "name": "Fuel gas final inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FM-01"
+      ],
+      "inspection": "Fuel gas final inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-16",
+      "name": "Building final inspection",
+      "subcontractor": "County",
+      "duration": 1,
+      "dependsOn": [
+        "FM-11",
+        "FM-12",
+        "FM-13",
+        "FM-14",
+        "FM-15",
+        "FM-07",
+        "FM-09"
+      ],
+      "inspection": "Building final inspection",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-17",
+      "name": "Certificate of Occupancy issued",
+      "subcontractor": "County",
+      "duration": 3,
+      "dependsOn": [
+        "FM-16"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": false,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-18",
+      "name": "Final clean and owner punch list round 2",
+      "subcontractor": "Cleaning Crew / Owner",
+      "duration": 2,
+      "dependsOn": [
+        "FM-17"
+      ],
+      "inspection": "",
+      "milestone": false,
+      "ownerTask": true,
+      "notes": ""
+    },
+    {
+      "phaseId": "final-movein",
+      "id": "FM-19",
+      "name": "Move-in",
+      "subcontractor": "Owner",
+      "duration": 1,
+      "dependsOn": [
+        "FM-18"
+      ],
+      "inspection": "",
+      "milestone": true,
+      "ownerTask": true,
+      "notes": ""
+    }
+  ]
+}
