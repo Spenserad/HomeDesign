@@ -2,7 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Floor Plan Generator</title>
+  <link rel="stylesheet" href="./src/styles/schedule.css">
+  <link rel="stylesheet" href="./node_modules/frappe-gantt/dist/frappe-gantt.css">
+  <title>Home Build Dashboard</title>
   <style>
     :root {
       color-scheme: light;
@@ -122,8 +124,65 @@
       font-size: 12px;
       margin-top: 10px;
     }
+
+        .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .page-header p {
+      margin: 4px 0 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .view-switcher {
+      display: inline-flex;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 6px;
+    }
+
+    .view-switcher button {
+      border: 0;
+      background: transparent;
+      color: #374151;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .view-switcher button.active {
+      background: #111827;
+      color: #fff;
+    }
+
+    .view-panel {
+      display: none;
+    }
+
+    .view-panel.active {
+      display: block;
+    }
+
+    .schedule-shell {
+      display: grid;
+      gap: 14px;
+    }
   </style>
 </head>
+<script src="./node_modules/frappe-gantt/dist/frappe-gantt.umd.js"></script>
 <body>
 <div class="app-shell">
   <aside class="sidebar">
@@ -149,26 +208,62 @@
     </section>
   </aside>
 
-  <main class="main-content">
-    <div id="canvas"></div>
+      <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>Home Build Dashboard</h1>
+        <p>Design the floor plan and track the construction schedule in one place.</p>
+      </div>
 
-    <section class="panel" style="margin-top: 14px;">
-      <h3>Room Schedule</h3>
-      <table>
-        <thead>
-        <tr>
-          <th>Room ID</th>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Area (sf)</th>
-        </tr>
-        </thead>
-        <tbody id="room-schedule-body"></tbody>
-      </table>
+      <div class="view-switcher" role="tablist" aria-label="Main views">
+        <button id="tab-floorplan" class="active" type="button" data-view="floorplan">Floor Plan</button>
+        <button id="tab-schedule" type="button" data-view="schedule">Schedule</button>
+      </div>
+    </div>
+
+    <section id="view-floorplan" class="view-panel active">
+      <div id="canvas"></div>
+
+      <section class="panel" style="margin-top: 14px;">
+        <h3>Room Schedule</h3>
+        <table>
+          <thead>
+          <tr>
+            <th>Room ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Area (sf)</th>
+          </tr>
+          </thead>
+          <tbody id="room-schedule-body"></tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="view-schedule" class="view-panel">
+      <div id="schedule-root" class="schedule-shell"></div>
     </section>
   </main>
 </div>
 
 <script type="module" src="./main.js"></script>
+<script type="module">
+  const buttons = [...document.querySelectorAll(".view-switcher button")];
+  const panels = {
+    floorplan: document.getElementById("view-floorplan"),
+    schedule: document.getElementById("view-schedule")
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const view = button.dataset.view;
+
+      buttons.forEach((b) => b.classList.toggle("active", b === button));
+      Object.entries(panels).forEach(([key, panel]) => {
+        panel.classList.toggle("active", key === view);
+      });
+    });
+  });
+</script>
 </body>
 </html>

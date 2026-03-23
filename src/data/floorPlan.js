@@ -51,7 +51,7 @@ const mainLevel = {
     levelLabel: { x: 23, y: 45.8 }
   },
   walls: {
-    outerBorder: true,
+    outerBorder: false,
     dashed: [{ x1: 17, x2: 45, y: 20 }],
     interiorLines: [
       { x1: 49, y1: 11, x2: 49, y2: 18 },
