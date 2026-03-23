@@ -1,4 +1,4 @@
-import { floorPlan, getPlanForLevel } from '../data/floorPlan.js'
+import { getFloorPlan, getPlanForLevel } from '../data/floorPlan.js'
 import { defaultLayers } from '../data/layers.js'
 import { createDrawing } from '../drawing/canvas.js'
 import { renderPlan } from './renderPlan.js'
@@ -12,7 +12,8 @@ function calculateRoomArea(room) {
   return Number((room.w * room.h).toFixed(1))
 }
 
-export function createApp() {
+export async function createApp() {
+  const floorPlan = await getFloorPlan()
   const draw = createDrawing('#canvas')
   const state = createState(floorPlan.defaultLevelId)
 
@@ -47,8 +48,8 @@ export function createApp() {
     summaryTotalArea.textContent = `${totalArea.toFixed(1)} sf`
   }
 
-  const renderCurrentPlan = () => {
-    const levelPlan = getCurrentPlan()
+  const renderCurrentPlan = async () => {
+    const levelPlan = await getCurrentPlan()
     renderPlan(draw, levelPlan, state)
     renderRoomSchedule(levelPlan)
   }
@@ -63,9 +64,9 @@ export function createApp() {
 
     levelSelect.value = state.currentLevelId
 
-    levelSelect.addEventListener('change', (event) => {
+    levelSelect.addEventListener('change', async (event) => {
       state.currentLevelId = event.target.value
-      renderCurrentPlan()
+      await renderCurrentPlan()
     })
   }
 
@@ -78,9 +79,9 @@ export function createApp() {
       input.type = 'checkbox'
       input.dataset.layer = layerName
       input.checked = state.layers[layerName]
-      input.addEventListener('change', () => {
+      input.addEventListener('change', async () => {
         state.layers[layerName] = input.checked
-        renderCurrentPlan()
+        await renderCurrentPlan()
       })
 
       const text = document.createElement('span')
@@ -94,32 +95,32 @@ export function createApp() {
 
   buildLevelControl()
   buildLayerControls()
-  renderCurrentPlan()
+  await renderCurrentPlan()
 
   window.app = {
     draw,
     state,
     floorPlan,
-    rerender() {
-      renderCurrentPlan()
+    async rerender() {
+      await renderCurrentPlan()
     },
-    setLevel(levelId) {
+    async setLevel(levelId) {
       state.currentLevelId = levelId
       if (levelSelect) {
         levelSelect.value = levelId
       }
-      renderCurrentPlan()
+      await renderCurrentPlan()
     },
-    toggleLayer(name) {
+    async toggleLayer(name) {
       state.layers[name] = !state.layers[name]
       const checkbox = layerControls.querySelector(`input[data-layer="${name}"]`)
       if (checkbox) {
         checkbox.checked = state.layers[name]
       }
-      renderCurrentPlan()
+      await renderCurrentPlan()
     },
-    getRoomSchedule() {
-      const plan = getCurrentPlan()
+    async getRoomSchedule() {
+      const plan = await getCurrentPlan()
       return plan.rooms.map((room) => ({
         roomId: room.roomId,
         name: room.name,
@@ -128,4 +129,6 @@ export function createApp() {
       }))
     }
   }
+
+  return window.app
 }
