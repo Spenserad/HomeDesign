@@ -9,6 +9,7 @@ import { renderGas } from '../renderers/gasRenderer.js'
 import { renderLighting } from '../renderers/lightingRenderer.js'
 import { renderPlumbing } from '../renderers/plumbingRenderer.js'
 import { renderRooms } from '../renderers/roomsRenderer.js'
+import { renderStairs } from '../renderers/stairsRenderer.js'
 import { renderWalls } from '../renderers/wallsRenderer.js'
 import { renderWindows } from '../renderers/windowsRenderer.js'
 
@@ -21,6 +22,7 @@ export function renderPlan(draw, plan, state) {
 
   if (state.layers.walls) {
     renderWalls(draw, plan.walls)
+    renderStairs(draw, plan.stairs, plan.id)
   }
 
   if (state.layers.fixtures) {

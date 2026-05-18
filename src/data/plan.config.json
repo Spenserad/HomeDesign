@@ -262,30 +262,6 @@
             "h": 5,
             "label": "HVAC / WH",
             "labelSize": 9
-          },
-          {
-            "x": 45,
-            "y": 0,
-            "w": 7,
-            "h": 4,
-            "label": "",
-            "labelSize": 8
-          },
-          {
-            "x": 52,
-            "y": 0,
-            "w": 5,
-            "h": 4,
-            "label": "Landing",
-            "labelSize": 8
-          },
-          {
-            "x": 52,
-            "y": 4,
-            "w": 4,
-            "h": 10,
-            "label": "",
-            "labelSize": 8
           }
         ]
       },
@@ -599,6 +575,41 @@
           "h": 3,
           "label": true
         }
+      ],
+      "stairs": [
+        {
+          "id": "main-stair-core",
+          "landings": [
+            {
+              "x": 55,
+              "y": 0,
+              "w": 5,
+              "h": 4,
+              "label": "Landing",
+              "labelSize": 8
+            }
+          ],
+          "flights": [
+            {
+              "x": 45,
+              "y": 0,
+              "w": 10,
+              "h": 4,
+              "direction": "east",
+              "treadSpacing": 1.5,
+              "showArrow": true
+            },
+            {
+              "x": 52,
+              "y": 4,
+              "w": 4,
+              "h": 10,
+              "direction": "north",
+              "treadSpacing": 1.0,
+              "showArrow": true
+            }
+          ]
+        }
       ]
     },
     {
@@ -646,28 +657,20 @@
         {
           "roomKey": "bonus",
           "x": 45,
-          "y": 44,
+          "y": 37,
           "w": 15,
-          "h": 0,
+          "h": 7,
           "alignRight": true
         }
       ],
-
       "labels": [
         {
           "text": "Balcony / Open to Great Room",
           "x": 13,
           "y": 39.2,
           "size": 10
-        },
-        {
-          "text": "Stairs Up",
-          "x": 52,
-          "y": 3,
-          "size": 10
         }
       ],
-
       "dimensions": {
         "exteriorSpans": [
           {
@@ -686,9 +689,26 @@
             "at": 63,
             "label": "44' full upper outline"
           }
+        ],
+        "interiorCritical": [
+          {
+            "id": "upper-open-width",
+            "axis": "x",
+            "from": 0,
+            "to": 41,
+            "at": 41,
+            "label": "41' open-to-below span"
+          },
+          {
+            "id": "upper-bedroom-stack",
+            "axis": "y",
+            "from": 14,
+            "to": 44,
+            "at": 62,
+            "label": "30' bedroom + bath stack"
+          }
         ]
       },
-
       "annotations": {
         "northArrow": {
           "x": 57,
@@ -705,11 +725,9 @@
           "y": 45.8
         }
       },
-
       "walls": {
         "outerBorder": true,
         "dashed": [],
-
         "interiorLines": [
           {
             "x1": 41,
@@ -717,52 +735,39 @@
             "x2": 60,
             "y2": 14
           },
-
           {
             "x1": 45,
             "y1": 14,
             "x2": 45,
             "y2": 37
           },
-
           {
-            "x1": 48,
-            "y1": 0,
-            "x2": 48,
-            "y2": 14
+            "x1": 45,
+            "y1": 27,
+            "x2": 60,
+            "y2": 27
+          },
+          {
+            "x1": 45,
+            "y1": 34,
+            "x2": 60,
+            "y2": 34
+          },
+          {
+            "x1": 45,
+            "y1": 37,
+            "x2": 60,
+            "y2": 37
+          },
+          {
+            "x1": 41,
+            "y1": 37,
+            "x2": 45,
+            "y2": 37
           }
         ],
-
-        "interiorRects": [
-          {
-            "x": 48,
-            "y": 0,
-            "w": 7,
-            "h": 5,
-            "label": "Landing",
-            "labelSize": 8
-          },
-
-          {
-            "x": 48,
-            "y": 5,
-            "w": 4,
-            "h": 9,
-            "label": "",
-            "labelSize": 8
-          },
-
-          {
-            "x": 41,
-            "y": 5,
-            "w": 7,
-            "h": 3,
-            "label": "",
-            "labelSize": 8
-          }
-        ]
+        "interiorRects": []
       },
-
       "windows": [],
       "doors": [],
       "fixtures": {},
@@ -775,7 +780,44 @@
       "lighting": {
         "ceiling": []
       },
-      "cabinetry": []
+      "cabinetry": [],
+      "stairs": [
+        {
+          "id": "upper-stair-core",
+          "landings": [
+            {
+              "x": 52,
+              "y": 0,
+              "w": 8,
+              "h": 5,
+              "label": "Landing",
+              "labelSize": 8
+            }
+          ],
+          "flights": [
+            {
+              "x": 45,
+              "y": 0,
+              "w": 7,
+              "h": 5,
+              "direction": "east",
+              "treadSpacing": 1.2,
+              "showArrow": true
+            },
+            {
+              "x": 45,
+              "y": 5,
+              "w": 4,
+              "h": 9,
+              "direction": "north",
+              "treadSpacing": 1.0,
+              "showArrow": true,
+              "label": "Stairs Up",
+              "labelSize": 8
+            }
+          ]
+        }
+      ]
     }
   ]
 }
